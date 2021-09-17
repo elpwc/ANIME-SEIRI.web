@@ -1,12 +1,19 @@
+$font: 'Segoe UI';
+
 *{
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI';
+  font-family: $font;
 }
 
-#wei_red{
-  background-color: pink;
-  color: red;
-  text-align: left;
-  height:5px;
+
+.season-list{
+  width:25%;
+  border: {
+    style:solid;
+    width:1px;
+  }
 }
+
+@import "_season_list_color";
+
