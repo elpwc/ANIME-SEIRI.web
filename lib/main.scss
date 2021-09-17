@@ -3,17 +3,33 @@ $font: 'Segoe UI';
 *{
   margin: 0;
   padding: 0;
-  font-family: $font;
+  //font-family: $font;
 }
 
 
 .season-list{
+  margin: 0;
+  padding: 0;
+  padding-left: 0px;
   width:25%;
+  float:left;
   border: {
     style:solid;
     width:1px;
+    color: gray;
+  }
+  table{
+    width:100%;
+    font-family: '宋体';
   }
 }
 
 @import "_season_list_color";
+
+.year-box{
+  border: {
+    style: solid;
+    width:1px;
+  }
+}
 

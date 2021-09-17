@@ -1,0 +1,3 @@
+<?php
+require "dbcfg.php";
+
