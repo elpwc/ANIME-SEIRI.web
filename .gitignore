@@ -1,6 +1,13 @@
-dbcfg.php
-PHPMailer-6.5.1
+# 账户密码隐私
+private/*
+!private/*.example.php
+
+# 插件
+PHPMailer-6.5.1/
+
+# 测试用
+test/
 formtest.php
 formtest2.php
 mailtest.php
-emailcfg.php
+format.html

@@ -1,5 +1,5 @@
 <?php
-require "dbcfg.php";
+require "private\dbcfg.php";
 
 $year = $_POST['year'];
 $season = $_POST['season'];

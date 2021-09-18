@@ -1,3 +1,3 @@
 <?php
-require "dbcfg.php";
+require "private\dbcfg.php";
 
