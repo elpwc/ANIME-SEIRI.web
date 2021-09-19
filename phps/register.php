@@ -17,4 +17,5 @@ $result = mysqli_query($link, $sql);
 session_start();
 
 $_SESSION['login'] = true;
+$_SESSION['email'] = $email;
 ?>

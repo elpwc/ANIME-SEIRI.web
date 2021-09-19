@@ -23,7 +23,6 @@ $verify_code = $_POST['verify'];
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
  
-//调用PHPMailer组件，此处是你自己的目录，需要改写。
 require '../PHPMailer-6.5.1/src/Exception.php';
 require '../PHPMailer-6.5.1/src/PHPMailer.php';
 require '../PHPMailer-6.5.1/src/SMTP.php';

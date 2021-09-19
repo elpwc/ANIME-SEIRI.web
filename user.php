@@ -21,7 +21,7 @@
 
   </iframe>
   <div>
-    <form action="user.php" class='RegistorForm' method="post">
+    <form action="#" class='RegistorForm' method="post">
       <p>邮箱</p><span id='email-tips-message'></span>
       <input type="text" class="form-control" name="email"><br />
       <p>邮箱验证码</p>

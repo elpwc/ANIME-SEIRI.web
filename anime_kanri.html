@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>anime</title>
+  <meta charset="utf-8" />
+  <script src="http://www.recaptcha.net/recaptcha/api.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <!--script src="./lib/jquery-3.3.1.min.js"></script-->
+  <script src="https://cdn.staticfile.org/jquery/3.3.1/jquery.min.js"></script>
+  <script src="./lib/anime_kanri.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+    integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div>
+    <form action="#" class='RegistorForm' method="post">
+      <p>名字(简中)</p>
+      <input type="text" class="form-control" name="name"><br />
+      <p>类型</p>
+      <select class="form-control" name="type">
+        <option value='normal'>通常</option>
+        <option value='short'>短篇(~10min)</option>
+        <option value='ramen'>泡面(~3min)</option>
+        <option value='movie'>剧场</option>
+        <option value='other'>其他</option>
+      </select>
+
+
+      <p>放送年月</p>
+      <input type="text" class="form-control" name="year">年<input type="text" class="form-control" name="month">月<br />
+
+      <p>集数</p>
+      <input type="text" class="form-control" name="episode_count"><br />
+
+
+      <p>放送状态</p>
+      <select class="form-control" name='housou_stat'>
+        <option value='kanketu'>完结</option>
+        <option value='housouchu'>放送中</option>
+        <option value='mihousou'>待放送</option>
+        <option value='sibaraku'>暂停放送</option>
+        <option value='teisi'>永久停止放送</option>
+        <option value='other'>其他</option>
+      </select>
+
+      <p>播放地址</p>
+      <input type="text" class="form-control" name="link"><br />
+
+      <p>封面地址</p>
+      <input type="text" class="form-control" name="image"><br />
+
+      <input id='ova_checkbox' type="checkbox"><span>OVA</span>
+      <br />
+      <button id="register_btn" type="button" class="btn btn-primary">添加</button>
+      <br />
+      <span id='tips-message'></span>
+      <br />
+
+
+    </form>
+
+
+  </div>
+
+
+</body>
+
+</html>

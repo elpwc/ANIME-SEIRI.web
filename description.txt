@@ -1,0 +1,42 @@
+│  .gitignore			git忽略文件
+│  account.php			
+│  anime_kanri.html			动画信息加入/修改页（管理员）
+│  description.txt			描述文件
+│  format.html			php格式化页
+│  formtest.php			测试
+│  formtest2.php			测试
+│  index.html			首页
+│  mailtest.php			测试
+│  new.php			
+│  README.md			readme
+│  regst_suc.php			注册后的跳转页
+│  season.php			
+│  user.php			用户注册页
+│
+├─lib				调用
+│      anime_kanri.js			动画信息加入/修改页js
+│      main.css			主页css
+│      main.css.map
+│      main.js			主页js
+│      main.scss			主页scss
+│      user_main.js			注册页js
+│      _sass_convert.bat		scss转css
+│      _season_list_color.scss		动画所有类型的状态scss
+│
+├─PHPMailer-6.5.1
+├─phps				后台php
+│      addanime.php			申请加入新动画
+│      mail.php			申请发邮件
+│      mailexist.php			申请查询邮件注册信息
+│      register.php			申请注册
+│      main.php			主页后台
+├─private				隐私文件
+│      dbcfg.example.php
+│      dbcfg.php			数据库
+│      emailcfg.example.php
+│      emailcfg.php			邮件
+│
+├─src				资源
+│      favicon.ico
+│
+└─test
