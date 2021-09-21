@@ -16,10 +16,6 @@
 </head>
 
 <body>
-
-  <iframe>
-
-  </iframe>
   <div>
     <form action="#" class='RegistorForm' method="post">
       <p>邮箱</p><span id='email-tips-message'></span>
