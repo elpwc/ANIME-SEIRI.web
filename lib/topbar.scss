@@ -3,4 +3,39 @@
   height:50px;
   width:100%;
   position:fixed;
+  background: {
+    color: blue;
+  };
+}
+
+#logoimg{
+  height:50px;
+  
+}
+
+#navbar{
+  background: {
+    color: white;
+  };
+}
+
+#userinfo{
+  text-align: right;
+}
+
+body { 
+  padding-top: 90px; 
+}
+
+
+@mixin logreg_btn(){
+  width: 100px;
+}
+
+.loginbtn{
+  @include logreg_btn();
+}
+
+.regbtn{
+  @include logreg_btn();
 }
