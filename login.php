@@ -19,20 +19,20 @@
     <form action="#" class='LoginForm' method="post">
 
       <div class="form-group">
-        <label for="emailinput">邮箱</label>
-        <input type="email" class="form-control" id="emailinput" name="email">
-        <small id='email-tips-message' class="form-text text-muted"></small>
+        <label for="login_emailinput">邮箱</label>
+        <input type="email" class="form-control" id="login_emailinput" name="login_email">
+        <small id='login_email-tips-message' class="form-text text-muted"></small>
       </div>
 
       <div class="form-group">
-        <label for="passwordinput">密码</label>
-        <input type="password" class="form-control" id="passwordinput" name="password">
+        <label for="login_passwordinput">密码</label>
+        <input type="password" class="form-control" id="login_passwordinput" name="login_password">
       </div>
 
       <br />
       <div class="form-group form-check">
-        <input id='u_checkbox' class="form-check-input" type="checkbox">
-        <label class="form-check-label" for="u_checkbox">
+        <input id='login_u_checkbox' class="form-check-input" type="checkbox">
+        <label class="form-check-label" for="login_u_checkbox">
           <span class="mr-auto">以后记住密码自动登录</span>
           <a href="#"><span class="mr-auto">忘记密码</span></a>
           <a href="#"><span>注册账号</span></a>
@@ -46,7 +46,7 @@
       </div>
 
       <br />
-      <small class="form-text text-muted" id='tips-message'></small>
+      <small class="form-text text-muted" id='login_tips-message'></small>
 
     </form>
 

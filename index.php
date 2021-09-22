@@ -20,6 +20,7 @@
 <body>
 
 <?php
+header('Secure');
 require 'topbar.php';
 ?>
   <div>
