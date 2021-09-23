@@ -24,9 +24,9 @@ $verify_code = $_POST['verify'];
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
  
-require '../PHPMailer-6.5.1/src/Exception.php';
-require '../PHPMailer-6.5.1/src/PHPMailer.php';
-require '../PHPMailer-6.5.1/src/SMTP.php';
+require '../plugin/PHPMailer-6.5.1/src/Exception.php';
+require '../plugin/PHPMailer-6.5.1/src/PHPMailer.php';
+require '../plugin/PHPMailer-6.5.1/src/SMTP.php';
  
 $mail = new PHPMailer(true);       // Passing `true` enables exceptions
 try {

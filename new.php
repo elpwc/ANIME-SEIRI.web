@@ -1,5 +1,5 @@
 <?php
-require "private\dbcfg.php";
+require "./private/dbcfg.php";
 
 $name_zh_cn = $_POST['comment-name'];
 $name_jp = $_POST['anime_name_jp'];

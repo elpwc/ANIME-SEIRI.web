@@ -14,7 +14,7 @@ if (isset($_SESSION['rempw']) && $_SESSION['rempw']=="yes") {
         header("Refresh:0");
     }
 
-    echo($_COOKIE['login'].$_COOKIE['uid'].$_COOKIE['pwmd5']);
+    //echo($_COOKIE['login'].$_COOKIE['uid'].$_COOKIE['pwmd5']);
 } else {
     //echo '514';
     if (isset($_SESSION['rempw']) && $_SESSION['rempw']=="no") {
@@ -50,14 +50,16 @@ if (isset($_SESSION['rempw']) && $_SESSION['rempw']=="yes") {
 
   <link rel="stylesheet" href="lib/topbar.css" />
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+  <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-  <!--script src="./lib/jquery-3.3.1.min.js"></script-->
-  <script src="https://cdn.staticfile.org/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script-->
+  <!--jq必须比bs更早地引入-->
   <script src="./lib/topbar.js"></script>
+  <!--script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
     integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script-->
+
 </head>
 
 <body>
@@ -123,7 +125,7 @@ if (isset($_SESSION['rempw']) && $_SESSION['rempw']=="yes") {
                       'way'=> 'uid',
                       'rempw'=> 'yes'
                     );
-                    $res = send_post('http://localhost/animeseiri/phps/login_verify.php', $post_data);
+                    $res = send_post('http://localhost/animeseiri/php/login_verify.php', $post_data);
                     //$json_data = json_decode($res);
                     //var_dump($res);
                     $json_obj = json_decode($res);
@@ -145,12 +147,9 @@ if (isset($_SESSION['rempw']) && $_SESSION['rempw']=="yes") {
                 //一直开着浏览器 只是跳转网页
                 logined();
             }
-
-            
-
             function logined()
             {
-                include "./phps/escape.php";
+                include "./php/escape.php";
                 $username ="N/A";
 
                 //获取用户名
@@ -169,10 +168,24 @@ if (isset($_SESSION['rempw']) && $_SESSION['rempw']=="yes") {
                 //还原转义
                 $username = re_escape_characters_if_sql_injection($username);
 
-                echo("<span>".$username."</span>"); ?>
-          <span>阅番指数：n/a</span>
-          <button class="btn btn-light" type="button">个人设置</button>
-          <button id="user_quit_btn" class="btn btn-light" type="button">注销(for test)</button>
+                echo("<span><a href=''>".$username."</a></span>"); ?>
+          <span>阅番指数:n/a</span>
+          <div class="collapse navbar-collapse" style="height: 100%;">
+            <ul class="navbar-nav mr-5">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                  aria-expanded="false">
+                  个人设置
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">个人资料</a>
+                  <a class="dropdown-item" href="#">我的消息</a>
+                  <div class="dropdown-divider"></div>
+                  <a id="user_quit_btn" class="dropdown-item" href="#">退出登录</a>
+                </div>
+              </li>
+            </ul>
+
           <?php
             }
 

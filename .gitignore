@@ -3,12 +3,9 @@ private/*
 !private/*.example.php
 
 # 插件
-PHPMailer-6.5.1/
+plugin/
 
 # 测试用
 test/
-formtest.php
-formtest2.php
-mailtest.php
 format.html
 _sass_convert.lnk
