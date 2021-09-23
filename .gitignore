@@ -9,3 +9,7 @@ plugin/
 test/
 format.html
 _sass_convert.lnk
+
+#用户信息
+users/avatar/*
+!users/avatar/default.jpg

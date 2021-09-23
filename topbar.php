@@ -168,8 +168,15 @@ if (isset($_SESSION['rempw']) && $_SESSION['rempw']=="yes") {
                 //还原转义
                 $username = re_escape_characters_if_sql_injection($username);
 
+                ?>
+                <div>
+                <a class="navbar-brand" href="">
+                  <img src="./users/avatar/default.jpg" alt="" id='logoimg' />
+                </a>
+                <?php
                 echo("<span><a href=''>".$username."</a></span>"); ?>
           <span>阅番指数:n/a</span>
+              </div>
           <div class="collapse navbar-collapse" style="height: 100%;">
             <ul class="navbar-nav mr-5">
               <li class="nav-item dropdown">
