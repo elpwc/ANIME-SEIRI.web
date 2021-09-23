@@ -4,16 +4,17 @@ require "../private/emailcfg.php";
 
 //生成6位随机验证码
 //没有使用
-function codestr(){
-  $arr=array_merge(range('a','b'),range('A','B'),range('0','9'));
-  shuffle($arr);
-  $arr=array_flip($arr);
-  $arr=array_rand($arr,6);
-  $res='';
-  foreach ($arr as $v){
-      $res.=$v;
-  }
-  return $res;
+function codestr()
+{
+    $arr=array_merge(range('a', 'b'), range('A', 'B'), range('0', '9'));
+    shuffle($arr);
+    $arr=array_flip($arr);
+    $arr=array_rand($arr, 6);
+    $res='';
+    foreach ($arr as $v) {
+        $res.=$v;
+    }
+    return $res;
 }
 
 //[*邮件发送逻辑处理过程*系统核心配置文件*]
@@ -65,6 +66,3 @@ try {
 } catch (Exception $e) {
     echo '邮件发送失败: ', $mail->ErrorInfo;
 }
- 
- 
-?>

@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <?php
-header('Secure');
+
 session_start();
-if(isset($_SESSION['rempw']) && $_SESSION['rempw']=="yes"){
+if (isset($_SESSION['rempw']) && $_SESSION['rempw']=="yes") {
+    //跳转网页
+    //echo '114';
+    setcookie("login", "yes", time()+60*60*24*30);
+    setcookie("uid", $_SESSION['uid'], time()+60*60*24*30);
+    setcookie("pwmd5", $_SESSION['pwmd5'], time()+60*60*24*30);
 
-  //TODO: 登陆后第一次跳转setcookie失效 加个延时试试？
+    //登陆后第一次跳转setcookie失效的处理
+    if (!isset($_COOKIE['login'])) {
+        header("Refresh:0");
+    }
 
-
-
-
-  setcookie("login","yes",time()+60*60*24*30);
-  setcookie("uid",$_SESSION['uid'],time()+60*60*24*30);
-  setcookie("pwmd5",$_SESSION['pwmd5'],time()+60*60*24*30);
-  echo($_COOKIE['login'].$_COOKIE['uid'].$_COOKIE['pwmd5']);
-}else{
-  setcookie("login","",0);
-  setcookie("uid","",0);
-  setcookie("pwmd5","",0);
+    echo($_COOKIE['login'].$_COOKIE['uid'].$_COOKIE['pwmd5']);
+} else {
+    //echo '514';
+    if (isset($_SESSION['rempw']) && $_SESSION['rempw']=="no") {
+        //退出登录
+        //echo '810';
+        setcookie("login", "", 0);
+        setcookie("uid", "", 0);
+        setcookie("pwmd5", "", 0);
+    } else {
+        //第一次打开浏览器
+        if (isset($_COOKIE['login']) && $_COOKIE['login'] == "yes") {
+            //echo '1919';
+            setcookie("login", "yes", time()+60*60*24*30);
+            setcookie("uid", $_COOKIE['uid'], time()+60*60*24*30);
+            setcookie("pwmd5", $_COOKIE['pwmd5'], time()+60*60*24*30);
+            $_SESSION['login'] = true;
+            $_SESSION['uid'] = $_COOKIE['uid'];
+            $_SESSION['pwmd5'] = $_COOKIE['pwmd5'];
+            $_SESSION['rempw'] = "yes";
+  
+            if (!isset($_COOKIE['login'])) {
+                header("Refresh:0");
+            }
+        }
+    }
 }
 ?>
 <html>
@@ -80,81 +103,82 @@ if(isset($_SESSION['rempw']) && $_SESSION['rempw']=="yes"){
         <div id='userinfo'>
           <?php
 
-            if(empty($_SESSION["login"])){
-              if(empty($_COOKIE["login"])){
-                //没有登录
-                echo "1";
-                not_logined();
-              }else{
-                //保存了密码 但是是首次打开浏览器
-                $_SESSION['login'] = true;
-                $_SESSION['uid'] = $_COOKIE['uid'];
+            if (empty($_SESSION["login"])) {
+                if (empty($_COOKIE["login"])) {
+                    //没有登录
+                    //echo "1";
+                    not_logined();
+                } else {
+                    //保存了密码 但是是首次打开浏览器
+                    $_SESSION['login'] = true;
+                    $_SESSION['uid'] = $_COOKIE['uid'];
 
-                $uid = $_SESSION['uid'];
+                    $uid = $_SESSION['uid'];
 
-                //验证登录(顺便刷新Cookie时长捏
-                $post_data = array(
-                  'id'=> $uid,
-                  'password'=> $_COOKIE['pwmd5'],
-                  'way'=> 'uid',
-                  'rempw'=> 'yes'
-                );
-                $res = send_post('./phps/login_verify.php' ,$post_data);
-                $json_data = json_decode($res);
-                //TODO: 救救JSON读取——————————————————————
+                    //验证登录(顺便刷新Cookie时长捏
+                    $post_data = array(
+                      'uid'=> $uid,
+                      'password'=> $_COOKIE['pwmd5'],
+                      'pwway'=> 'md5',
+                      'way'=> 'uid',
+                      'rempw'=> 'yes'
+                    );
+                    $res = send_post('http://localhost/animeseiri/phps/login_verify.php', $post_data);
+                    //$json_data = json_decode($res);
+                    //var_dump($res);
+                    $json_obj = json_decode($res);
 
 
-
-
-                if($json_data['result'] == 'success'){
-                  //验证成功
-                  echo "2";
-                  logined();
-                }else{
-                  //验证失败
-                  echo "3";
-                  not_logined();
+                    if ($json_obj->result == 'success') {
+                        //验证成功
+                        //echo "2";
+                        logined();
+                    } else {
+                        //验证失败
+                        //echo "3";
+                        not_logined();
+                    }
                 }
-
-              }
-            }else{
-              echo "4";
-              //一直开着浏览器 只是跳转网页
-              logined();
+            } else {
+                //echo "4";
+                //echo"<".$_SESSION['uid'].">";
+                //一直开着浏览器 只是跳转网页
+                logined();
             }
 
             
 
-            function logined(){
-              include "./phps/escape.php";
-              $username ="N/A";
+            function logined()
+            {
+                include "./phps/escape.php";
+                $username ="N/A";
 
-              //获取用户名
-              require "./private/dbcfg.php";
-              $uid = $_SESSION['uid'];
-              $link = @mysqli_connect(HOST, USER, PASS, DBNAME) or die("提示：数据库连接失败！");
-              //mysqli_select_db($link, DBNAME);
-              mysqli_set_charset($link, 'utf8');
-              $sql = "SELECT username FROM users WHERE id=".$uid.";";
-              $result = mysqli_query($link, $sql);
+                //获取用户名
+                require "./private/dbcfg.php";
+                $uid = $_SESSION['uid'];
+                $link = @mysqli_connect(HOST, USER, PASS, DBNAME) or die("提示：数据库连接失败！");
+                //mysqli_select_db($link, DBNAME);
+                mysqli_set_charset($link, 'utf8');
+                $sql = "SELECT username FROM users WHERE id=".$uid.";";
+                $result = mysqli_query($link, $sql);
                 
-              while ( $row = $result->fetch_array() ) {
-                $username = $row[0];
-                break;
-              }
-              //还原转义
-              $username = re_escape_characters_if_sql_injection($username);
+                while ($row = $result->fetch_array()) {
+                    $username = $row[0];
+                    break;
+                }
+                //还原转义
+                $username = re_escape_characters_if_sql_injection($username);
 
-              echo("<span>".$username."</span>");
-          ?>
+                echo("<span>".$username."</span>"); ?>
           <span>阅番指数：n/a</span>
           <button class="btn btn-light" type="button">个人设置</button>
           <button id="user_quit_btn" class="btn btn-light" type="button">注销(for test)</button>
           <?php
             }
 
-            function not_logined(){
-          ?>
+            function not_logined()
+            {
+                ?>
           <div class="btn-group shadow-sm" role="group">
             <button class="btn btn-primary regbtn" type="button" data-toggle="modal" data-target="#register_modal"
               data-backdrop="static">
@@ -169,13 +193,14 @@ if(isset($_SESSION['rempw']) && $_SESSION['rempw']=="yes"){
           <?php
             }
 
-            function send_post($url, $post_data)
+            function send_post($url, $post_data_)
             {
-                $postdata = http_build_query($post_data);
+                $postdata = http_build_query($post_data_);
                 $options = array(
                     'http' => array(
                         'method' => 'POST',
-                        'header' => 'Content-type:application/x-www-form-urlencoded',
+                        //'header' => 'Content-type:application/x-www-form-urlencoded\r\n',
+                        'header' => "Content-type:application/x-www-form-urlencoded\r\nUser-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0\r\nAccept:*/*\r\nAccept-Language:zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2\r\nX-Requested-With:XMLHttpRequest\r\nConnection:keep-alive\r\n",
                         'content' => $postdata,
                         'timeout' => 15 * 60 // 超时时间（单位:s）
                     )
@@ -208,7 +233,7 @@ if(isset($_SESSION['rempw']) && $_SESSION['rempw']=="yes"){
         ?>
         </div>
         <!--div class="modal-footer">
-      </div-->
+        </div-->
       </div>
     </div>
   </div>
@@ -229,7 +254,7 @@ if(isset($_SESSION['rempw']) && $_SESSION['rempw']=="yes"){
         ?>
         </div>
         <!--div class="modal-footer">
-      </div-->
+        </div-->
       </div>
     </div>
   </div>

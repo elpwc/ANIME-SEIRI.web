@@ -4,4 +4,3 @@
   $_SESSION['uid'] = "-1";
   $_SESSION['pwmd5'] = "";
   $_SESSION['rempw'] = "no";
-?>

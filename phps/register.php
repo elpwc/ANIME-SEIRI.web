@@ -19,9 +19,9 @@ $sql = "SELECT id FROM users WHERE email='".$email."';";
 $result = mysqli_query($link, $sql);
 $uid = "";
 
-while ( $row = $result->fetch_array() ) {
-  $uid = $row[0];
-  break;
+while ($row = $result->fetch_array()) {
+    $uid = $row[0];
+    break;
 }
 
 session_start();
@@ -30,5 +30,3 @@ $_SESSION['login'] = true;
 $_SESSION['uid'] = $uid;
 $_SESSION['pwmd5'] = $password_encrypted;
 $_SESSION['rempw'] = "no";
-
-?>

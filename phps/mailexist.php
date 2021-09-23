@@ -17,24 +17,22 @@ $result = mysqli_query($link, $sql);
 $count = 0;
 
 if ($result->num_rows > 0) {
-  while ($row = $result->fetch_assoc()) {
-      $count = (int)$row["COUNT(*)"];
-  }
+    while ($row = $result->fetch_assoc()) {
+        $count = (int)$row["COUNT(*)"];
+    }
 }
 
-header('Content-Type:application/json'); 
+header('Content-Type:application/json');
 
 //判断！
 //echo $count;
 
-if($count == 0){
-  echo json_encode([
+if ($count == 0) {
+    echo json_encode([
     'exist' => 'no'
   ]);
-}
-else{
-  echo json_encode([
+} else {
+    echo json_encode([
     'exist' => 'yes'
   ]);
 }
-
