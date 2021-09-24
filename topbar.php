@@ -95,7 +95,7 @@ function logined()
 
 <div class="" >
 <ul class="navbar-nav">
-  <a class="navbar-brand" href="">
+  <a class="navbar-brand shadow-sm" href="">
     <img src="./users/avatar/default.jpg" alt="" id='logoimg' />
   </a>
   <span class='nav-item'><a href=''>
