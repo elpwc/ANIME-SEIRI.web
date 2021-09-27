@@ -77,6 +77,10 @@ if ($way=="email") {//邮箱验证
         //用户存在
         if ($password_encrypted_got == $password_encrypted) {
             //密码正确
+
+            //更新数据库上次登陆时间
+            $sql = "UPDATE users SET last_modify=NOW(), last_signin=NOW() WHERE id=$uid_got;";
+            mysqli_query($link, $sql);
       
             $_SESSION['login'] = true;
             $_SESSION['uid'] = $uid_got;

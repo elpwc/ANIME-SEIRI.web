@@ -182,17 +182,17 @@ function send_post($url, $post_data_)
       <div class="collapse navbar-collapse" id="mainnav">
         <ul class="navbar-nav mr-5">
           <li class="nav-item active">
-            <a class="nav-link" href="#">我的番剧</a>
+            <a class="nav-link" href="#" target = "_top" id="myanimes">我的番剧</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">所有番剧</a>
+            <a class="nav-link" href="allanimes.php?type=tv&cntry=ja" target = "_top" id="allanimes">所有番剧</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">当季番剧</a>
+            <a class="nav-link" href="#" target = "_top" id="crtanimes">当季番剧</a>
           </li>
           <?php
-          if($user_stat == 'logined'){
-          ?>
+          if ($user_stat == 'logined') {
+              ?>
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-expanded="false">
@@ -289,6 +289,7 @@ function send_post($url, $post_data_)
       </div>
     </div>
   </div>
+
 
 </body>
 

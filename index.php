@@ -31,6 +31,10 @@ require 'topbar.php';
 Building...</h3>
 
   </div>
+
+  <?php
+require "./kanban.php";
+?>
 </body>
 
 </html>

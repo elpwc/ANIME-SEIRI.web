@@ -13,3 +13,7 @@ _sass_convert.lnk
 #用户信息
 users/avatar/*
 !users/avatar/default.jpg
+
+#自动生成的
+lib/*.css
+lib/*.map
