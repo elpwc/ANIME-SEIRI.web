@@ -17,40 +17,116 @@
 
 </head>
 
-<body>
+<body style="background-color:azure;">
 <?php
   require 'topbar.php';
 
   $keyword = "";
 
-  if (isset($_GET['keyword'])) {
-      $keywords = explode(' ',$_GET['keyword']);
-      $link = @mysqli_connect(HOST, USER, PASS, DBNAME) or die("提示：数据库连接失败！");
-      //mysqli_select_db($link, DBNAME);
-      mysqli_set_charset($link, 'utf8');
+  function ani_tab($name, $ori_name, $image_url,$epi, $housou_date ){
+    ?>
+        <div class="card mb-3" style="max-width: 100%; right: 5px; left: 5px;">
+          <div class="row no-gutters">
+            <div class="col-md-2">
+              <img src="
+              <?php
+              if($image_url == ""){
+                echo("./src/np_image.jpg"); 
+              }else{
+                echo("https://lain.bgm.tv/pic/cover/c/".$image_url); 
+              }
+              
+              ?>" alt="...">
+            </div>
+            <div class="col-md-10">
+              <div class="card-body">
+                <h4 class="card-title"><?php echo($name); ?><small class="text-muted">&nbsp;&nbsp;&nbsp;<?php echo($ori_name); ?></small></h4>
+                
+                <p class="card-text"><?php echo($epi); ?>话 / <?php echo($housou_date); ?></p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      $where = "name LIKE '%".$keywords[0]."%'";
-
-      for($i = 1; $i < sizeof($keywords); $i++){
-        $where += " AND name LIKE '%".$keywords[$i]."%'";
-      }
-      $where +=";";
-
-      //$sql = "SELECT COUNT(name) FROM anime WHERE name LIKE '%".$keyword."%';";
-      //$result = mysqli_query($link, $sql);
-
-      
-
-
-      $sql = "SELECT name FROM anime WHERE ".$where;
-      $result = mysqli_query($link, $sql);
-
-      while ($row = $result->fetch_array()) {
-        $name = $row[0];
-        echo($name.PHP_EOL);
-    }
+<?php
   }
   ?>
+
+  <script type="text/javascript">
+
+  </script>
+
+  <div class="container shadow-lg" style="background-color: white;">
+    <div>
+      <div class="text-center">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+
+      <div>
+        <?php
+          if (isset($_GET['keyword']) && ($_GET['keyword']!="" || $_GET['keyword']!=" ")) {
+            $keywords = explode(' ',$_GET['keyword']);
+            $link = @mysqli_connect(HOST, USER, PASS, DBNAME) or die("提示：数据库连接失败！");
+            //mysqli_select_db($link, DBNAME);
+            mysqli_set_charset($link, 'utf8');
+      
+            $where = "name LIKE '%".$keywords[0]."%'";
+      
+            for($i = 1; $i < sizeof($keywords); $i++){
+              $where .= " AND name LIKE '%".$keywords[$i]."%'";
+            }
+            $where .=" ORDER BY bangumi_rank;";
+      
+            $sql = "SELECT COUNT(name) FROM anime WHERE ".$where;
+            $count = mysqli_query($link, $sql)->fetch_array()[0];
+            
+            $sql = "SELECT name,ori_name,country,image_url,episode,housou_date FROM anime WHERE ".$where;
+            //echo($sql);
+            $result = mysqli_query($link, $sql);
+      
+            while ($row = $result->fetch_array()) {
+              ani_tab($row[0],$row[1],$row[3],$row[4],$row[5]);
+          }
+        }
+        ?>
+
+        <div class="card mb-3" style="max-width: 100%; right: 5px; left: 5px;">
+          <div class="row no-gutters">
+            <div class="col-md-2">
+              <img src="https://lain.bgm.tv/pic/cover/c/cb/57/9717_sAVag.jpg" alt="...">
+            </div>
+            <div class="col-md-10">
+              <div class="card-body">
+                <h4 class="card-title">魔法少女小圆<small class="text-muted">&nbsp;&nbsp;&nbsp;魔法少女まどか☆マギカ</small></h4>
+                
+                <p class="card-text">12话 / 2011年x月x日 / 日语</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" style="max-width: 100%; right: 5px; left: 5px;">
+          <div class="row no-gutters">
+            <div class="col-md-2">
+              <img src="https://lain.bgm.tv/pic/cover/c/17/ed/274234_iZ22k.jpg" alt="...">
+            </div>
+            <div class="col-md-10">
+              <div class="card-body">
+                <h4 class="card-title">小林家的龙女仆S<small class="text-muted">&nbsp;&nbsp;&nbsp;小林さんちのメイドラゴンS</small></h4>
+                
+                <p class="card-text">12话 / 2021年x月x日 / 日语</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
 
 
 <?php
