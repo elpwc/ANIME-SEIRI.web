@@ -31,7 +31,7 @@
               <img src="
               <?php
               if($image_url == ""){
-                echo("./src/np_image.jpg"); 
+                echo("./src/no_image.jpg"); 
               }else{
                 echo("https://lain.bgm.tv/pic/cover/c/".$image_url); 
               }
