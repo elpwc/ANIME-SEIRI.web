@@ -232,8 +232,8 @@ function send_post($url, $post_data_)
         </div>
 
         <form class="form-inline">
-          <input class="form-control" type="text" placeholder="动画名">
-          <button class="btn btn-success" type="button">
+          <input class="form-control" type="text" placeholder="动画名/用户名" id="search_input">
+          <button class="btn btn-success" type="button" id="search_btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
               viewBox="0 0 16 16">
               <path
