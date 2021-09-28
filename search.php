@@ -42,7 +42,7 @@
               <div class="card-body">
                 <h4 class="card-title"><?php echo($name); ?><small class="text-muted">&nbsp;&nbsp;&nbsp;<?php echo($ori_name); ?></small></h4>
                 
-                <p class="card-text"><?php echo($epi); ?>话 / <?php echo($housou_date); ?></p>
+                <p class="card-text"><?php echo($epi); ?>话 / <?php echo(explode(' ', $housou_date)[0]); ?></p>
               </div>
             </div>
           </div>
@@ -58,11 +58,11 @@
 
   <div class="container shadow-lg" style="background-color: white;">
     <div>
-      <div class="text-center">
+      <!--div class="text-center">
         <div class="spinner-border" role="status">
           <span class="sr-only">Loading...</span>
         </div>
-      </div>
+      </div-->
 
       <div>
         <?php
@@ -85,43 +85,23 @@
             $sql = "SELECT name,ori_name,country,image_url,episode,housou_date FROM anime WHERE ".$where;
             //echo($sql);
             $result = mysqli_query($link, $sql);
-      
+            
+            if($count > 0){
+              echo('<small class="text-muted">找到了'.(string)$count.'部作品！！！(ﾉﾟ▽ﾟ)ﾉ');
+            }else{
+              echo('
+              <div style="height: 200px; padding-top: 80px; text-align: center;">
+              <h5>没有找到符合的作品捏...(；´д｀)ゞ可能是输入的和站内收录的翻译有差异，可以换个别名试试(>ω<*) </h5><br/>
+              <a href="./index.php" target="_top">点这里返回首页捏<small>(虽说点左上角的logo也不是不行但还是希望...能碰一下这里捏❤)</small></a>
+              </div>');
+            }
+            
+
             while ($row = $result->fetch_array()) {
               ani_tab($row[0],$row[1],$row[3],$row[4],$row[5]);
           }
         }
         ?>
-
-        <div class="card mb-3" style="max-width: 100%; right: 5px; left: 5px;">
-          <div class="row no-gutters">
-            <div class="col-md-2">
-              <img src="https://lain.bgm.tv/pic/cover/c/cb/57/9717_sAVag.jpg" alt="...">
-            </div>
-            <div class="col-md-10">
-              <div class="card-body">
-                <h4 class="card-title">魔法少女小圆<small class="text-muted">&nbsp;&nbsp;&nbsp;魔法少女まどか☆マギカ</small></h4>
-                
-                <p class="card-text">12话 / 2011年x月x日 / 日语</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card mb-3" style="max-width: 100%; right: 5px; left: 5px;">
-          <div class="row no-gutters">
-            <div class="col-md-2">
-              <img src="https://lain.bgm.tv/pic/cover/c/17/ed/274234_iZ22k.jpg" alt="...">
-            </div>
-            <div class="col-md-10">
-              <div class="card-body">
-                <h4 class="card-title">小林家的龙女仆S<small class="text-muted">&nbsp;&nbsp;&nbsp;小林さんちのメイドラゴンS</small></h4>
-                
-                <p class="card-text">12话 / 2021年x月x日 / 日语</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-        </div>
 
       </div>
 
