@@ -51,10 +51,27 @@
 <?php
   }
   ?>
+  <style type="text/css">
+    #soba_ran{
+      position: fixed;
+      height: 150px;
+      width: 200px;
+      top: 100px;
+      left: 200px;
+      border-style: solid;
+      border-width: 1px;
+      border-color: lightgrey;
+      border-radius: 9px;
+      background-color: white;
+    }
+  </style>
 
-  <script type="text/javascript">
-
-  </script>
+  <div class="shadow" id="soba_ran">
+  <ul class="list-group">
+  <li class="list-group-item active" aria-current="true">搜动画的结果</li>
+  <li class="list-group-item">搜用户的结果</li>
+</ul>
+  </div>
 
   <div class="container shadow-lg" style="background-color: white;">
     <div>
