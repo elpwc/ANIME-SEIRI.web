@@ -24,16 +24,25 @@
   $keyword = "";
 
   if (isset($_GET['keyword'])) {
-      $keyword = $_GET['keyword'];
+      $keywords = explode(' ',$_GET['keyword']);
       $link = @mysqli_connect(HOST, USER, PASS, DBNAME) or die("提示：数据库连接失败！");
       //mysqli_select_db($link, DBNAME);
       mysqli_set_charset($link, 'utf8');
 
+      $where = "name LIKE '%".$keywords[0]."%'";
+
+      for($i = 1; $i < sizeof($keywords); $i++){
+        $where += " AND name LIKE '%".$keywords[$i]."%'";
+      }
+      $where +=";";
+
       //$sql = "SELECT COUNT(name) FROM anime WHERE name LIKE '%".$keyword."%';";
       //$result = mysqli_query($link, $sql);
 
+      
 
-      $sql = "SELECT name FROM anime WHERE name LIKE '%".$keyword."%';";
+
+      $sql = "SELECT name FROM anime WHERE ".$where;
       $result = mysqli_query($link, $sql);
 
       while ($row = $result->fetch_array()) {
@@ -42,8 +51,6 @@
     }
   }
   ?>
-
-
 
 
 <?php
