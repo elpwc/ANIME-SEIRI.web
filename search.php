@@ -50,6 +50,10 @@
 
 <?php
   }
+
+  function user_tab($name, $ori_name, $image_url,$epi, $housou_date ){
+
+  }
   ?>
   <style type="text/css">
     #soba_ran{
