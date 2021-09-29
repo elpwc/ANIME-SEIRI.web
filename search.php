@@ -19,6 +19,7 @@
 
 <body style="background-color:azure;">
 <?php
+  $current_li = -1;
   require 'topbar.php';
 
   $keyword = "";

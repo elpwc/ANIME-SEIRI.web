@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <?php
+require "./private/dbcfg.php";
+
 $user_stat = "not_logined";
 
 //$current_li = 0;
@@ -22,7 +24,7 @@ if (isset($_SESSION['rempw']) && $_SESSION['rempw']=="yes") {
     //echo '514'.$_SESSION['rempw'];
     if (isset($_SESSION['rempw']) && $_SESSION['rempw']=="no") {
         //退出登录
-        echo '810';
+        //echo '810';
         setcookie("login", "", 0);
         setcookie("uid", "", 0);
         setcookie("pwmd5", "", 0);
@@ -92,7 +94,7 @@ function logined()
     $username ="N/A";
 
     //获取用户名
-    require "./private/dbcfg.php";
+    
     $uid = $_SESSION['uid'];
     $link = @mysqli_connect(HOST, USER, PASS, DBNAME) or die("提示：数据库连接失败！");
     //mysqli_select_db($link, DBNAME);
