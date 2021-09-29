@@ -29,12 +29,14 @@
       </div>
 
       <br />
+      <div class="ml-auto" style="text-align: right;"><span ><a href="#">忘记密码点这里处理捏</a></span></div>
+      <br/>
       <div class="form-group form-check">
         <input id='login_u_checkbox' class="form-check-input" type="checkbox">
         <label class="form-check-label" for="login_u_checkbox">
-          <span class="mr-auto">以后记住密码自动登录</span>
-          <a href="#"><span class="mr-auto">忘记密码</span></a>
-          <a href="#"><span>注册账号</span></a>
+          <span class="mr-auto">记住密码以后自动登录(在用别人的电脑的话就别记了|∀°)</span><br/>
+          
+          <!--span><a href="#">注册账号</a></span-->
         </label>
         
       </div>

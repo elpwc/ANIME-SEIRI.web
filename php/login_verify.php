@@ -85,7 +85,7 @@ if ($way=="email") {//邮箱验证
             $_SESSION['login'] = true;
             $_SESSION['uid'] = $uid_got;
             $_SESSION['pwmd5'] = $password_encrypted;
-            $_SESSION['rempw'] = "no";
+            $_SESSION['rempw'] = "no_but_dont_quit";
             if ($rempw == "yes") {
                 //记住密码
                 $_SESSION['rempw'] = "yes";
@@ -130,7 +130,7 @@ if ($way=="email") {//邮箱验证
             $_SESSION['login'] = true;
             $_SESSION['uid'] = $uid;
             $_SESSION['pwmd5'] = $password_encrypted;
-            $_SESSION['rempw'] = "no";
+            $_SESSION['rempw'] = "no_but_dont_quit";
             if ($rempw == "yes") {
                 //记住密码
                 $_SESSION['rempw'] = "yes";

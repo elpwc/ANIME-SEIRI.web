@@ -17,14 +17,23 @@ if (isset($_SESSION['rempw']) && $_SESSION['rempw']=="yes") {
     $user_stat = "logined";
 //echo($_COOKIE['login'].$_COOKIE['uid'].$_COOKIE['pwmd5']);
 } else {
-    //echo '514';
+    //echo '514'.$_SESSION['rempw'];
     if (isset($_SESSION['rempw']) && $_SESSION['rempw']=="no") {
         //退出登录
-        //echo '810';
+        echo '810';
         setcookie("login", "", 0);
         setcookie("uid", "", 0);
         setcookie("pwmd5", "", 0);
         $user_stat = "not_logined";
+        $_SESSION['rempw']=="";
+    }elseif (isset($_SESSION['rempw']) && $_SESSION['rempw']=="no_but_dont_quit") {
+      //echo 'yajuu';
+      //不保存密码登录
+      $_SESSION['login'] = true;
+      $_SESSION['rempw'] = "no_but_dont_quit";
+      $user_stat = "logined";
+      $_SESSION['rempw']=="";
+        
     } else {
         //第一次打开浏览器
         if (isset($_COOKIE['login']) && $_COOKIE['login'] == "yes") {
@@ -65,9 +74,12 @@ if (isset($_SESSION['rempw']) && $_SESSION['rempw']=="yes") {
                 //echo "3";
                 $user_stat = "not_logined";
             }
-        } else {
+        }
+
+        else {
             //没密码保存 新用户首次进入网页
             $user_stat = "not_logined";
+            //echo"114514";
         }
     }
 }
