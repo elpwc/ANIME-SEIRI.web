@@ -19,6 +19,7 @@
 <body>
 
 <?php
+$current_li = 0;
 require 'topbar.php';
 ?>
   <div>

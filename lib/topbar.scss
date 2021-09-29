@@ -40,3 +40,18 @@ body {
   @include logreg_btn();
 }
 
+@mixin li_border_bottom($color){
+  border-bottom: {
+    color: $color;
+    width: 5px;
+    style: solid;
+  };
+}
+
+.selected_li{
+  @include li_border_bottom(rgb(255, 115, 138));
+}
+
+.mouseover_li{
+  @include li_border_bottom(rgb(255, 179, 191));
+}

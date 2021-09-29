@@ -2,6 +2,8 @@
 <?php
 $user_stat = "not_logined";
 
+//$current_li = 0;
+
 session_start();
 if (isset($_SESSION['rempw']) && $_SESSION['rempw']=="yes") {
     //一直开着浏览器 只是跳转网页
@@ -193,13 +195,14 @@ function send_post($url, $post_data_)
       <!-- Links -->
       <div class="collapse navbar-collapse" id="mainnav">
         <ul class="navbar-nav mr-5">
-          <li class="nav-item active">
-            <a class="nav-link" href="#" target = "_top" id="myanimes">我的番剧</a>
+          <li class="nav-item <?php if($current_li == 0){echo ("active selected_li");} ?>" id="myanimes_li">
+            <a class="nav-link" href="index.php" target = "_top" id="myanimes">我的番剧</a>
+            
           </li>
-          <li class="nav-item">
+          <li class="nav-item <?php if($current_li == 1){echo ("active selected_li");} ?>"id="allanimes_li">
             <a class="nav-link" href="allanimes.php?type=tv&cntry=ja" target = "_top" id="allanimes">所有番剧</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <?php if($current_li == 2){echo ("active selected_li");} ?>"id="crtanimes_li">
             <a class="nav-link" href="#" target = "_top" id="crtanimes">当季番剧</a>
           </li>
           <?php
