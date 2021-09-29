@@ -108,7 +108,7 @@
             $result = mysqli_query($link, $sql);
             
             if($count > 0){
-              echo('<small class="text-muted">找到了'.(string)$count.'部作品！！！(ﾉﾟ▽ﾟ)ﾉ');
+              echo('<small class="text-muted">找到了'.(string)$count.'部作品！！！(ﾉﾟ▽ﾟ)ﾉ</small>');
             }else{
               echo('
               <div style="height: 200px; padding-top: 80px; text-align: center;">

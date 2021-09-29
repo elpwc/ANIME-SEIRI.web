@@ -138,8 +138,8 @@
         $sele->HTML();
     }
     ?>
-        <!--
-      <div id="type_sele">
+      <!--
+        <div id="type_sele">
         <h6><span class="">类型</span></h6>
         <ul class="nav nav-pills">
         
@@ -359,9 +359,8 @@
         </style>
 
         <div class="container-fluid">
-          <div class="row">
+          <div class="">
             <?php
-                        $keywords = explode(' ', $_GET['keyword']);
                         $link = @mysqli_connect(HOST, USER, PASS, DBNAME) or die("提示：数据库连接失败！");
                         //mysqli_select_db($link, DBNAME);
                         mysqli_set_charset($link, 'utf8');
@@ -585,16 +584,17 @@
                         $result = mysqli_query($link, $sql);
                         
                         if ($count > 0) {
-                            echo('<small class="text-muted">找到了'.(string)$count.'部作品！！！(ﾉﾟ▽ﾟ)ﾉ');
+                            echo('<small class="text-muted">找到了'.(string)$count.'部作品！！！(ﾉﾟ▽ﾟ)ﾉ</small><br/>');
                         } else {
                             echo('
                           <div style="height: 200px; padding-top: 80px; text-align: center;">
-                          <h5>没有找到符合的作品捏...(；´д｀)ゞ可能是输入的和站内收录的翻译有差异，可以换个别名试试(>ω<*) </h5><br/>
-                          <a href="./index.php" target="_top">点这里返回首页捏<small>(虽说点左上角的logo也不是不行但还是希望...能碰一下这里捏❤)</small></a>
+                          <h5>没有找到符合的作品捏...(；´д｀)ゞ </h5><br/>
+                          <a href="./index.php" target="_top">点这里随机展现一部作品捏</a>
                           </div>');
                         }
-                        
-            
+                        ?>
+                        <div class="row">
+                        <?php
                         while ($row = $result->fetch_array()) {
                             ani_card($row[0], $row[2]);
                         }
@@ -645,6 +645,7 @@
               <div class="card-body">
                 <p class="card-text">日常</p>
               </div-->
+                      </div>
           </div>
         </div>
       </div>
