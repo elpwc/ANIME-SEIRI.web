@@ -33,17 +33,17 @@
 
 
   <div class="form-group">
-        <label for="register_emailinput">邮箱</label>
-        <input type="email" class="form-control" id="register_emailinput" name="register_email">
-        <small id='register_email-tips-message' class="form-text text-muted"></small>
+        <label for="forgot_emailinput">邮箱</label>
+        <input type="email" class="form-control" id="forgot_emailinput" name="forgot_email">
+        <small id='forgot_email-tips-message' class="form-text text-muted"></small>
       </div>
 
       <div class="form-group">
-        <label for="register_verifyinput">邮箱验证码</label>
+        <label for="forgot_verifyinput">邮箱验证码</label>
         <div class="input-group">
-          <input type="text" class="form-control" id="register_verifyinput" name="register_emailverify">
+          <input type="text" class="form-control" id="forgot_verifyinput" name="forgot_emailverify">
           <span class="input-group-btn">
-            <button id="register_serify_btn" class="btn btn-primary" type="button">
+            <button id="forgot_serify_btn" class="btn btn-primary" type="button">
               发送验证码
             </button>
           </span>
@@ -51,25 +51,25 @@
       </div>
 
       <div class="form-group">
-        <label for="register_passwordinput">新密码</label>
-        <input type="password" class="form-control" id="register_passwordinput" name="register_password">
+        <label for="forgot_passwordinput">新密码</label>
+        <input type="password" class="form-control" id="forgot_passwordinput" name="forgot_password">
         <small class="form-text text-muted">6-18位数字字母特殊符号组合，至少包含数字和字母</small>
       </div>
 
       <div class="form-group">
-        <label for="register_password2input">再重复输一遍新密码</label>
-        <input type="password" class="form-control" id="register_password2input" name="register_password2">
+        <label for="forgot_password2input">再重复输一遍新密码</label>
+        <input type="password" class="form-control" id="forgot_password2input" name="forgot_password2">
       </div>
       <br />
 
       <div class="g-recaptcha" data-callback="botverify" data-sitekey="6Ld7BHQcAAAAAIXgLrclWJIj5S2BErHyC_wLUHTK"></div>
 
       <div style="text-align: center; width: 100%;">
-        <button id="newpass_btn" type="button" class="btn btn-primary m-auto" style="width: 200px;">修改密码</button>
+        <button id="forgot_btn" type="button" class="btn btn-primary m-auto" style="width: 200px;">修改密码</button>
       </div>
 
       <br />
-      <small class="form-text text-muted" id='register_tips-message'></small>
+      <small class="form-text text-muted" id='forgot_tips-message'></small>
 
 
   </form>
