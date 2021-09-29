@@ -58,9 +58,27 @@
 
       <br />
       <div class="form-group form-check">
+        <input id='register_u_checkbox2' class="form-check-input" type="checkbox">
+        <label class="form-check-label" for="register_u_checkbox2">
+          <span>我知道ANIME-SEIRI是一款提供<b>追番进度管理</b>的网站，<b>不提供动画资源</b></a></span>
+        </label>
+      </div>
+      <!--div class="form-group form-check">
+        <input id='register_u_checkbox3' class="form-check-input" type="checkbox">
+        <label class="form-check-label" for="register_u_checkbox">
+          <span>我知道ANIME-SEIRI是一款提供<b>追番进度管理</b>的网站，<b>不提供动画资源</b></a></span>
+        </label>
+      </div>
+      <div class="form-group form-check">
+        <input id='register_u_checkbox4' class="form-check-input" type="checkbox">
+        <label class="form-check-label" for="register_u_checkbox">
+          <span>我知道ANIME-SEIRI是一款提供<b>追番进度管理</b>的网站，<b>不提供动画资源</b></a></span>
+        </label>
+      </div-->
+      <div class="form-group form-check">
         <input id='register_u_checkbox' class="form-check-input" type="checkbox">
         <label class="form-check-label" for="register_u_checkbox">
-          <span>不同意<a href="#" target="_blank">用户协议</a></span>
+          <span>我未满16岁</a></span>
         </label>
       </div>
 
