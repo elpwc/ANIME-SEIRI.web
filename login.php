@@ -29,7 +29,7 @@
       </div>
 
       <br />
-      <div class="ml-auto" style="text-align: right;"><span ><a href="#">忘记密码点这里处理捏</a></span></div>
+      <div class="ml-auto" style="text-align: right;"><span ><a href="./forgotpass.php">忘记密码点这里处理捏</a></span></div>
       <br/>
       <div class="form-group form-check">
         <input id='login_u_checkbox' class="form-check-input" type="checkbox">
