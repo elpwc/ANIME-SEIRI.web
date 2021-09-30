@@ -120,6 +120,7 @@ function logined()
 <div class="my-auto" style="vertical-align: center;background-color:rgb(255, 115, 138); border-radius: 5px; color:white; height:fit-content;">
 <span class='nav-item' style="vertical-align: center;"><small>&nbsp;&nbsp;阅番指数:n/a&nbsp;&nbsp;</small></span>
 </div>
+<span class="my-auto" style="color:gray;"><a href="#">&nbsp;<sup>?</sup></a></span>
   
 
 </ul>
