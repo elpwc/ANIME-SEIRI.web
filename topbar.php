@@ -210,13 +210,13 @@ function send_post($url, $post_data_)
           <?php
           if ($user_stat == 'logined') {
               ?>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown <?php if($current_li == 3){echo ("active selected_li");} ?>">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-expanded="false">
               个人设置
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">个人资料</a>
+              <a class="dropdown-item" href="./user.php">个人资料</a>
               <a class="dropdown-item" href="#">我的消息</a>
               <div class="dropdown-divider"></div>
               <a id="user_quit_btn" class="dropdown-item" href="#">退出登录</a>
