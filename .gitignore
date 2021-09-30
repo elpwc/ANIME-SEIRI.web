@@ -1,6 +1,6 @@
 # 账户密码隐私
 private/*
-!private/*.example.php
+!private/*.example.*
 
 # 插件
 plugin/
