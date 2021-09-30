@@ -277,7 +277,7 @@ function send_post($url, $post_data_)
         </div>
         <div class="modal-body">
           <?php
-        require "user.php";
+        require "register.php";
         ?>
         </div>
         <!--div class="modal-footer">
