@@ -114,11 +114,13 @@ function logined()
   <a class="navbar-brand shadow-sm" href="">
     <img src="./users/avatar/default.jpg" alt="" id='logoimg' />
   </a>
-  <span class='nav-item'><a href=''>
+  <span class='nav-item mr-3 my-auto'><a href='./user.php'>
       <?php echo($username); ?>
-    </a></span>
-
-  <span class='nav-item'>阅番指数:n/a</span>
+    </a>さん</span>
+<div class="my-auto" style="vertical-align: center;background-color:rgb(255, 115, 138); border-radius: 5px; color:white; height:fit-content;">
+<span class='nav-item' style="vertical-align: center;"><small>&nbsp;&nbsp;阅番指数:n/a&nbsp;&nbsp;</small></span>
+</div>
+  
 
 </ul>
 </div>
