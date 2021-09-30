@@ -127,9 +127,9 @@ function logined()
   </a>
   <span class='nav-item mr-3 my-auto'><a href='./user.php'>
       <?php echo($username); ?>
-    </a>さん</span>
+    </a><lang key='TOPBAR_SAN'>さん</lang></span>
 <div class="my-auto" style="vertical-align: center;background-color:rgb(255, 115, 138); border-radius: 5px; color:white; height:fit-content;">
-<span class='nav-item' style="vertical-align: center;"><small>&nbsp;&nbsp;阅番指数:n/a&nbsp;&nbsp;</small></span>
+<span class='nav-item' style="vertical-align: center;"><small>&nbsp;&nbsp;<lang key='TOPBAR_WATCHINGINDEX'>阅番指数</lang>:n/a&nbsp;&nbsp;</small></span>
 </div>
 <span class="my-auto" style="color:gray;"><a href="#">&nbsp;<sup>?</sup></a></span>
   
@@ -146,11 +146,11 @@ function not_logined()
 <div class="btn-group shadow-sm" role="group">
 <button class="btn btn-primary regbtn" type="button" data-toggle="modal" data-target="#register_modal"
   data-backdrop="static">
-  注册
+  <lang key='TOPBAR_REGISTERBTN'>注册</lang>
 </button>
 <button class="btn btn-link loginbtn" type="button" data-toggle="modal" data-target="#login_modal"
   data-backdrop="static">
-  登录
+  <lang key='TOPBAR_LOGINBTN'>登录</lang>
 </button>
 </div>
 
@@ -309,7 +309,7 @@ function send_post($url, $post_data_)
               <path
                 d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
             </svg>
-            搜索
+            <lang key='TOPBAR_SEARCHBTN'>搜索</lang>
           </button>
         </form>
 
@@ -323,7 +323,7 @@ function send_post($url, $post_data_)
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="register_modalLabel">注册</h5>
+          <h5 class="modal-title" id="register_modalLabel"><lang key='TOPBAR_REGISTERBTN'>注册</lang></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -344,7 +344,7 @@ function send_post($url, $post_data_)
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="login_modalLabel">登录</h5>
+          <h5 class="modal-title" id="login_modalLabel"><lang key='TOPBAR_LOGINBTN'>登录</lang></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
