@@ -9,3 +9,17 @@
   //max-height: 100%;
   //overflow-y: scroll;
 }
+
+#page_selector{
+  position: fixed;
+  top: 80px;
+  right: 50px;
+  border: {
+    radius: 10px;
+    style: solid;
+    color: rgb(255, 142, 161);
+    width: 1px;
+
+  }
+  background-color: white;;
+}

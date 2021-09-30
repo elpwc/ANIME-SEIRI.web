@@ -139,215 +139,6 @@
         $sele->HTML();
     }
     ?>
-        <!--
-        <div id="type_sele">
-        <h6><span class="">类型</span></h6>
-        <ul class="nav nav-pills">
-        
-        <li class="nav-item">
-          <a class="nav-link" href="#" id="all">全部</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">TV</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Web</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">OVA</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">电影</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">其他</a>
-        </li>
-        </ul>
-      </div>
-      <div id="year_sele">
-        <h6><span class="">年份</span></h6>
-        <ul class="nav nav-pills">
-        
-        <li class="nav-item">
-          <a class="nav-link" href="#">全部</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">2021</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">2020</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">2019</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">2018</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">2017</a>
-        </li>
-        </ul>
-      </div>
-      <div id="cntry_sele">
-        <h6><span class="">语言</span></h6>
-        <ul class="nav nav-pills">
-        
-        <li class="nav-item">
-          <a class="nav-link" href="#">全部</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">日语</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">国语</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">英语</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">韩语</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">其他</a>
-        </li>
-        </ul>
-      </div>
-      <div id="season_sele">
-        <h6><span class="">季度</span></h6>
-        <ul class="nav nav-pills">
-        
-        <li class="nav-item">
-          <a class="nav-link" href="#">全年</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">冬季</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">春季</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">夏季</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">秋季</a>
-        </li>
-        </ul>
-      </div>
-      <div id="epi_sele">
-        <h6><span class="">集数</span></h6>
-        <ul class="nav nav-pills">
-        
-        <li class="nav-item">
-          <a class="nav-link" href="#">全部</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">10-20话</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">20-30话</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">2-10话</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">1话</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">30-100话</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">100话以上</a>
-        </li>
-        </ul>
-      </div>
-      <div id="stat_sele">
-        <h6><span class="">放送状态</span></h6>
-        <ul class="nav nav-pills">
-        
-        <li class="nav-item">
-          <a class="nav-link" href="#">全部</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">已完结</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">连载中</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">停更</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">即将放送</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">其他</a>
-        </li>
-        </ul>
-      </div>
-      <div id="user1_sele">
-        <h6><span class="">我....</span></h6>
-        <ul class="nav nav-pills">
-        
-        <li class="nav-item">
-          <a class="nav-link" href="#">全部</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">想看的</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">还没点"想看"的</a>
-        </li>
-        </ul>
-      </div>
-      <div id="user2_sele">
-        <h6><span class=""></span></h6>
-        <ul class="nav nav-pills">
-        
-        <li class="nav-item">
-          <a class="nav-link" href="#">全部</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">看过的</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">没看过的</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">正在看的</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">弃番的</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">没看完的</a>
-        </li>
-        </ul>
-      </div>
-      <div id="len_sele">
-        <h6><span class="">单集长度</span></h6>
-        <ul class="nav nav-pills">
-        
-        <li class="nav-item">
-          <a class="nav-link" href="#">全部</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">25min正常</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">10min短篇</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">2min泡面</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">长篇</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">其他</a>
-        </li>
-        </ul>
-      </div>
-    -->
       </div>
 
       <div id="show-animes-div" class="col-sm-10">
@@ -368,8 +159,19 @@
 
             <div class="row">
               <?php
+                      $current_page = 1;
+                      $perpage=100;
+                      $page_max = (int)ceil(((double)$count) / ((double)$perpage));
+                      if(isset($_GET['page']) && $_GET['page']!=""){
+                        $current_page = (int)$_GET['page'];
+                      }
+
+                      $anishow_i = 0;
                         while ($row = $result->fetch_array()) {
+                          $anishow_i++;
+                          if($anishow_i >= ($current_page-1) * $perpage && $anishow_i <= ($current_page) * $perpage){
                             ani_card($row[0], $row[2]);
+                        }
                         }
                     
 
@@ -402,40 +204,31 @@
               <div class="card-body">
                 <p class="card-text">魔法少女小圆</p>
               </div>
-            </div>
-
-            <div class="card" style="width: 10rem;">
-              <img src="https://lain.bgm.tv/pic/cover/c/17/ed/274234_iZ22k.jpg" class="card-img-top" alt="小林家的龙女仆S">
-              <div class="card-body">
-                <p class="card-text">小林家的龙女仆S</p>
-              </div>
-            </div>
-
-            <div class="card" style="width: 10rem;">
-              <img src="https://lain.bgm.tv/pic/cover/c/0e/14/9912_LZML8.jpg" class="card-img-top" alt="日常">
-              <div class="card-body">
-                <p class="card-text">日常</p>
               </div-->
             </div>
           </div>
         </div>
+
       </div>
 
       
-      <!--div>
-
+      <div id="page_selector">
+        <div style="bottom: 0px;">
         <nav aria-label="">
           <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">第一页</a></li>
-            <li class="page-item"><a class="page-link" href="#">←</a></li>
             <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">→</a></li>
-            <li class="page-item"><a class="page-link" href="#">最后一页</a></li>
+            <span>...</span>
+            <li class="page-item"><a class="page-link" href="#"><?php echo($current_page-2);?></a></li>
+            <li class="page-item"><a class="page-link" href="#"><?php echo($current_page-1);?></a></li>
+            <li class="page-item active"><a class="page-link" href="#"><?php echo($current_page);?></a></li>
+            <li class="page-item"><a class="page-link" href="#"><?php echo($current_page+1);?></a></li>
+            <li class="page-item"><a class="page-link" href="#"><?php echo($current_page+2);?></a></li>
+            <span>...</span>
+            <li class="page-item"><a class="page-link" href="#"><?php echo($page_max);?></a></li>
           </ul>
         </nav>
-      </div-->
+        </div>
+      </div>
 
     </div>
   </div>
