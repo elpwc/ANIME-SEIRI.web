@@ -1,42 +1,62 @@
-│  .gitignore			git忽略文件
-│  account.php			
-│  anime_kanri.html			动画信息加入/修改页（管理员）
-│  description.txt			描述文件
-│  format.html			php格式化页
-│  formtest.php			测试
-│  formtest2.php			测试
-│  index.html			首页
-│  mailtest.php			测试
-│  new.php			
-│  README.md			readme
-│  regst_suc.php			注册后的跳转页
-│  season.php			
-│  user.php			用户注册页
-│
-├─lib				调用
-│      anime_kanri.js			动画信息加入/修改页js
-│      main.css			主页css
-│      main.css.map
-│      main.js			主页js
-│      main.scss			主页scss
-│      user_main.js			注册页js
-│      _sass_convert.bat		scss转css
-│      _season_list_color.scss		动画所有类型的状态scss
-│
-├─PHPMailer-6.5.1
-├─phps				后台php
-│      addanime.php			申请加入新动画
-│      mail.php			申请发邮件
-│      mailexist.php			申请查询邮件注册信息
-│      register.php			申请注册
-│      main.php			主页后台
-├─private				隐私文件
-│      dbcfg.example.php
-│      dbcfg.php			数据库
-│      emailcfg.example.php
-│      emailcfg.php			邮件
-│
-├─src				资源
-│      favicon.ico
-│
-└─test
+.                     主目录===============================================
+.gitignore			      gitignore文件
+allanimes.php         所有番剧
+anime_kanri.html			动画信息加入/修改页（管理员）
+description.txt		  	描述文件
+forgotpass.php        忘记密码处理页
+format.html		      	php格式化页
+index.php		        	首页（我的番剧）
+kanban.php            看板娘
+login.php             登录页
+README.md		          readme文件
+register.php          用户注册页
+search.php            搜索结果呈现页
+topbar.php            顶栏
+user.php		          用户页
+
+json                  JSON数据============================================
+lang.json             语言显示名称和语言代码对应JSON
+
+lang                  multilanguage相关==================================
+lang.js               多语言各语言翻译
+
+lib				            调用=================================================
+_sass_convert.bat		  scss转css脚本
+_season_list_color.scss		动画所有类型状态的scss
+
+plugin                组件===========================================
+PHPMailer-6.5.1       php邮件收发组件
+
+php				            后端php=======================================
+addanime.php			    申请加入新动画
+animecard.php**       动画Card类（暂不用）
+escape.php            转义函数
+filter.php            所有番剧页GET请求处理
+illegal.php           屏蔽词判断
+login_verify.php      登录验证
+mail.php			        申请发邮件
+mailexist.php			    申请查询邮件注册信息
+main.php**		        主页后台（暂不用）
+modifypass.php        密码修改申请
+register.php			    申请注册
+selector.php          所有番剧页筛选器类
+setlang.php           语言更改申请
+user_quit.php         用户退出登录申请
+
+private				        隐私文件==================================================
+dbcfg.php			        数据库配置
+emailcfg.php			    smtp配置
+illegal_words_list.php  屏蔽词列表
+pw_enc.php            密码加密方法
+
+src				            资源=================================================
+bgi.jpg               topbar背景
+favicon.ico           网页图标
+kanban.png            看板娘立绘
+logo.png              网页logo
+no_image.jpg          无海报动画默认图片
+
+test                  测试用文件=========================================
+
+users                 用户文件============================================
+avatar\default.jpg    默认头像
