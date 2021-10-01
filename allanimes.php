@@ -186,7 +186,7 @@ require "./private/dbcfg.php";
                             echo(" ./src/no_image.jpg"); } else { echo("https://lain.bgm.tv/pic/cover/c/".$image_url);
                   } ?>"
                 class="card-img-top" alt="
-                <?php echo($name); ?>">
+                <?php echo($name); ?>" width="150" height="216"/>
                 <div class="card-body">
                   <p class="card-text">
                     <?php echo($name); ?>
