@@ -128,7 +128,7 @@ function logined()
   <span class='nav-item mr-3 my-auto'><a href='./user.php'>
       <?php echo($username); ?>
     </a><lang key='TOPBAR_SAN'>さん</lang></span>
-<div class="my-auto" style="vertical-align: center;background-color:rgb(255, 115, 138); border-radius: 5px; color:white; height:fit-content;">
+<div class="my-auto" style="vertical-align: center;background-color:rgb(255, 115, 138); border-radius: 5px; color:white; height:fit-content; width:fit-content;">
 <span class='nav-item' style="vertical-align: center;"><small>&nbsp;&nbsp;<lang key='TOPBAR_WATCHINGINDEX'>阅番指数</lang>:n/a&nbsp;&nbsp;</small></span>
 </div>
 <span class="my-auto" style="color:gray;"><a href="#">&nbsp;<sup>?</sup></a></span>
