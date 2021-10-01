@@ -22,10 +22,11 @@
   $current_li = 3;
   require 'topbar.php';
 
-  $user_id = "0";
+  $user_id_user = "0";
   if(isset($_SESSION['uid']) && $_SESSION['uid'] != ""){
     $user_id = $_SESSION['uid'];
   }
+
   ?>
 
   <div class="container shadow-lg" style="background-color: white;">
@@ -34,7 +35,7 @@
       <img src="./users/avatar/default.jpg" width="200" hight="200" />
       </div>
         <div class="row" >
-          <h3><?php echo($user_id); ?></h3><a href="#"><span><small></small></span></a>
+          <h3><?php echo($username); ?></h3><a href="#"><span><small></small></span></a>
         </div>
 
     </div>

@@ -3,7 +3,8 @@
 require "./private/dbcfg.php";
 
 $user_stat = "not_logined";
-
+$crt_lang = 'zh-cn';
+$username ="N/A";
 //$current_li = 0;
 
 session_start();
@@ -87,7 +88,7 @@ if (isset($_SESSION['rempw']) && $_SESSION['rempw']=="yes") {
         }
     }
 }
-$crt_lang = 'zh-cn';
+
 
 if(isset($_SESSION['lang']) && $_SESSION['lang'] != ""){
   $crt_lang = $_SESSION['lang'];
@@ -98,11 +99,10 @@ if(isset($_SESSION['lang']) && $_SESSION['lang'] != ""){
   }
 }
 
-
 function logined()
 {
     include "./php/escape.php";
-    $username ="N/A";
+    global $username;
 
     //获取用户名
     
