@@ -1,6 +1,5 @@
-<!DOCTYPE html>
+
 <?php
-require "./private/dbcfg.php";
 
 $user_stat = "not_logined";
 $crt_lang = 'zh-cn';
@@ -121,6 +120,11 @@ function logined()
     $username = re_escape_characters_if_sql_injection($username); ?>
 
 <div class="" >
+
+<script src="http://www.recaptcha.net/recaptcha/api.js"></script>
+<script src="./lib/register.js"></script>
+<script src="./lib/login_main.js"></script>
+
 <ul class="navbar-nav">
   <a class="navbar-brand shadow-sm" href="">
     <img src="./users/avatar/default.jpg" alt="" id='logoimg' />
@@ -175,11 +179,6 @@ function send_post($url, $post_data_)
 }
 
 ?>
-<html>
-
-<head>
-  <title>user</title>
-  <meta charset="utf-8" />
 
   <link rel="stylesheet" href="lib/topbar.css" />
 
@@ -195,9 +194,6 @@ function send_post($url, $post_data_)
     integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
     crossorigin="anonymous"></script-->
 
-</head>
-
-<body>
 
   <nav class="navbar navbar-expand-lg fixed-top navbar-light shadow" id='navbar'>
       <!-- Brand/logo -->
@@ -360,7 +356,3 @@ function send_post($url, $post_data_)
     </div>
   </div>
 
-
-</body>
-
-</html>
