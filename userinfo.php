@@ -1,4 +1,7 @@
 <?php
+if($edit == 1){
+  echo('edit');
+}
 ?>
 <div>
 

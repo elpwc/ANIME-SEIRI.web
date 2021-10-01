@@ -5,14 +5,14 @@
 <head>
   <meta charset="utf-8" />
   <title>ANIME SEIRI.web</title>
-  <link rel="stylesheet" href="./lib/allanimes.css" />
+  <!--link rel="stylesheet" href="./lib/allanimes.css" /-->
   <link rel="icon" href="./src/favicon.ico" sizes="32x32" />
   <!--link rel="stylesheet" href="./lib/bootstrap.min.css" /-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <!--script src="./lib/jquery-3.3.1.min.js"></script-->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-  <script src="./lib/allanimes.js"></script>
+  <script src="./lib/user.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
@@ -31,9 +31,12 @@
 
   <div class="container shadow-lg" style="background-color: white;">
     <div class="row" >
-      <div class="shadow">
-      <img src="./users/avatar/default.jpg" width="200" hight="200" />
-      </div>
+        <div class="shadow avatar" style="position:relative;">
+          <img src="./users/avatar/default.jpg" width="200" hight="200" />
+          <div class="hide" style="position:absolute; bottom : 0px;width:fit-content;height:fit-content;background-color:rgba(255, 255, 255, 0.8); border-radius:3px;">
+          <span><a href="">修改头像</a></span>
+        </div>
+        </div>
         <div class="row" >
           <h3><?php echo($username); ?></h3><a href="./user.php?page=3&edit=1"><span><small>修改资料</small></span></a>
         </div>
@@ -81,6 +84,7 @@
 
 <div>
   <?php
+  $edit = 0;
     if(isset($_GET['page']) && (int)$_GET['page'] > 0){
       switch($_GET['page']){
         case 1:
@@ -91,11 +95,9 @@
           break;
         case 3:
           if (isset($_GET['edit']) && (int)$_GET['edit'] == 1) {
-            require "./userinfo.php?edit=1";
-          }else{
-            require "./userinfo.php";
+            $edit = 1;
           }
-          
+          require "./userinfo.php";
           break;
         default:
         require "./useranilist.php";
