@@ -117,10 +117,6 @@ function logined()
 
 <div class="">
 
-  <script src="http://www.recaptcha.net/recaptcha/api.js"></script>
-  <script src="./lib/register.js"></script>
-  <script src="./lib/login_main.js"></script>
-
   <ul class="navbar-nav">
     <a class="navbar-brand shadow-sm" href="">
       <img src="./users/avatar/default.jpg" alt="" id='logoimg' />
@@ -183,6 +179,9 @@ function send_post($url, $post_data_)
 <link rel="stylesheet" href="lib/topbar.css" />
 <script src="./lib/topbar.js"></script>
 <script src="./lang/lang.js"></script>
+<script src="http://www.recaptcha.net/recaptcha/api.js"></script>
+<script src="./lib/register.js"></script>
+<script src="./lib/login_main.js"></script>
 
 <nav class="navbar navbar-expand-lg fixed-top navbar-light shadow" id='navbar'>
   <!-- Brand/logo -->
