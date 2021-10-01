@@ -179,22 +179,41 @@ require "./private/dbcfg.php";
                         {
                             ?>
 
-              <div class="card" style="width: 10rem;">
-                <img src="
-                        <?php
-                        if ($image_url == "") {
-                            echo(" ./src/no_image.jpg"); } else { echo("https://lain.bgm.tv/pic/cover/c/".$image_url);
-                  } ?>"
-                class="card-img-top" alt="
-                <?php echo($name); ?>" width="150" height="216"/>
-                <div class="card-body">
-                  <p class="card-text">
-                    <?php echo($name); ?>
-                  </p>
-                </div>
-              </div>
+                        <div class="card" style="width: 10rem;">
+                          <img src="
+                                  <?php
+                                  if ($image_url == "") {
+                                      echo(" ./src/no_image.jpg"); } else { echo("https://lain.bgm.tv/pic/cover/c/".$image_url);
+                            } ?>"
+                          class="card-img-top" alt="
+                          <?php echo($name); ?>" width="150" height="216"/>
+                          <div class="card-body"style="padding: 0px;position:relative;">
+                            <p class="card-text">
+                              <?php echo($name); ?>
+                            </p>
+                            <div class="btn-toolbar" role="toolbar" style="position:absolute;bottom:0px;"aria-label="Toolbar with button groups">
+                              <div class="btn-group mr-2" role="group" aria-label="First group">
+                                <button type="button" id="allani_addbtn" class="btn btn-success">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                                  <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                                </svg>追加
+                                </button>
+                                <button type="button" id="allani_bukanbtn" class="btn btn-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                  <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                </svg>不看
+                              </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
 
-              <?php
+
+                        <div>
+                          TODO : 弹出框
+                        </div>
+
+                        <?php
                         }
 
                       ?>
@@ -232,6 +251,7 @@ require "./private/dbcfg.php";
 
     </div>
   </div>
+
 
 
   </div>
