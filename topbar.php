@@ -260,9 +260,9 @@ function send_post($url, $post_data_)
 
     </div>
 
-    <div class="mr-auto">
+    <!--div class="mr-auto">
       <img src="./src/bgi.jpg" height="70" />
-    </div>
+    </div-->
     <div>
       <ul class="navbar-nav mr-1">
 
