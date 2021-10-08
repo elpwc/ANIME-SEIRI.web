@@ -122,16 +122,16 @@ function logined()
       <img src="./users/avatar/default.jpg" alt="" id='logoimg' />
     </a>
     <span class='nav-item mr-3 my-auto'><a href='./user.php'>
-        <?php echo($username); ?>
+        <kawaiipinklink♥><?php echo($username); ?></kawaiipinklink♥>
       </a>
       <lang key='TOPBAR_SAN'>さん</lang>
-    </span>
+        </span>
     <div class="my-auto"
       style="vertical-align: center;background-color:rgb(255, 115, 138); border-radius: 5px; color:white; height:fit-content; width:fit-content;">
       <span class='nav-item' style="vertical-align: center;"><small>&nbsp;&nbsp;<lang key='TOPBAR_WATCHINGINDEX'>阅番指数
           </lang>:n/a&nbsp;&nbsp;</small></span>
     </div>
-    <span class="my-auto" style="color:gray;"><a href="#">&nbsp;<sup>?</sup></a></span>
+    <span class="my-auto" style="color:gray;"><a href="#">&nbsp;<sup><kawaiipinklink♥>?</kawaiipinklink♥></sup></a></span>
 
 
   </ul>
@@ -307,7 +307,7 @@ function send_post($url, $post_data_)
 
     <form class="form-inline">
       <input class="form-control" type="text" placeholder="动画名/用户名" id="search_input">
-      <button class="btn btn-success" type="button" id="search_btn">
+      <button class="btn btn-success" type="button" id="search_btn" style="background-color:rgb(255, 115, 138); border-color:rgb(255, 140, 170);">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
           viewBox="0 0 16 16">
           <path
