@@ -22,7 +22,7 @@ echo Generate executable file..
 echo ^cd cv_temp>cv_temp\_sass_convert_tempcmd_!j!.bat
 echo ^set /p former^=^<_sass_convert_tempfilename1_!j!>>cv_temp\_sass_convert_tempcmd_!j!.bat
 echo ^set /p after^=^<_sass_convert_tempfilename2_!j!>>cv_temp\_sass_convert_tempcmd_!j!.bat
-echo ^sass %%former%% %%after%% -s compressed^&^&^exit>>cv_temp\_sass_convert_tempcmd_!j!.bat
+echo ^sass ^"%%former%%^" ^"%%after%%^" -s compressed^&^&^exit>>cv_temp\_sass_convert_tempcmd_!j!.bat
 
 echo Executing..
 start cv_temp\_sass_convert_tempcmd_!j!.bat
